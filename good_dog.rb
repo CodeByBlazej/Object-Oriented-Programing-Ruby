@@ -3,12 +3,12 @@ class GoodDog
     @name = name
   end
 
-  def get_name
+  def name
     @name
   end
 
-  def set_name=(name)
-    @name = name
+  def name=(n)
+    @name = n
   end
 
   def speak
