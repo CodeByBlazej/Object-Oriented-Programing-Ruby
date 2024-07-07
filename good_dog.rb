@@ -1,14 +1,9 @@
 class GoodDog
+
+  attr_accessor :name
+
   def initialize(name)
     @name = name
-  end
-
-  def name
-    @name
-  end
-
-  def name=(n)
-    @name = n
   end
 
   def speak
@@ -18,6 +13,6 @@ end
 
 sparky = GoodDog.new("Sparky")
 puts sparky.speak
-puts sparky.get_name
-sparky.set_name = "Spartacus"
-puts sparky.get_name
+puts sparky.name
+sparky.name = "Spartacus"
+puts sparky.name
