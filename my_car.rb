@@ -10,8 +10,8 @@ class MyCar
     @speed = 0
   end
 
-  def change_color(c)
-    self.color = c 
+  def spray_paint(color)
+    self.color = color 
   end
 
   def car_info
@@ -46,7 +46,7 @@ end
 
 bmw = MyCar.new("2010", "red", "e90")
 puts bmw.car_info
-bmw.change_color("blue")
+bmw.spray_paint("blue")
 puts bmw.car_info
 puts bmw.color
 puts bmw.year
