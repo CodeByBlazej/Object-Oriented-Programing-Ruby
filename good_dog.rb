@@ -4,9 +4,9 @@ class GoodDog
 
 
   def initialize(n, h, w)
-    @name = n
-    @height = h
-    @weight = w 
+    self.name = n
+    self.height = h
+    self.weight = w 
   end
 
 
@@ -27,12 +27,20 @@ class GoodDog
   def self.what_am_i
     "I'm a GoodDog class!"
   end
+
+  def what_is_self
+    self
+  end
+
+  puts self
 end
 
 GoodDog.what_am_i
 
 sparky = GoodDog.new("Sparky", "12 inches", "10 lbs")
 puts sparky.info 
+p sparky.what_is_self
 
 sparky.change_info("Spartacus", "24 inches", "45 lbs")
 puts sparky.info
+
