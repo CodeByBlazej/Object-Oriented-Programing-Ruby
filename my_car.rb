@@ -41,7 +41,7 @@ class MyCar
     puts "Your current speed is #{speed}"
   end
 
-  def miles_per_galon(gallons, miles)
+  def self.miles_per_galon(gallons, miles)
     puts "Your MPG is #{miles / gallons}"
   end
 
@@ -65,4 +65,4 @@ bmw.break(5)
 bmw.current_speed
 bmw.stop
 bmw.current_speed
-bmw.miles_per_galon(16, 900)
+MyCar.miles_per_galon(16, 900)
