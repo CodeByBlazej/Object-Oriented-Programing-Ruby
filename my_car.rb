@@ -1,13 +1,14 @@
 class MyCar
 
   attr_accessor :color, :model, :speed
-  attr_reader :year
+  attr_reader :year, :mpg
 
   def initialize(y, c, m)
     @year = y
     @color = c
     @model = m 
     @speed = 0
+    @@mpg = mpg
   end
 
   def spray_paint(color)
@@ -42,13 +43,18 @@ class MyCar
   end
 
   def self.miles_per_galon(gallons, miles)
-    puts "Your MPG is #{miles / gallons}"
+    @@mpg = miles / gallons 
+    puts "Your MPG is #{@@mpg}"
   end
 
+  def to_s
+    "This car is #{model}, it's from #{year}, it's color is #{color} and its mpg is #{@@mpg}"
+  end
 
 end
 
 bmw = MyCar.new("2010", "red", "e90")
+alfa = MyCar.new("2002", "green", "156")
 puts bmw.car_info
 bmw.spray_paint("blue")
 puts bmw.car_info
@@ -66,3 +72,6 @@ bmw.current_speed
 bmw.stop
 bmw.current_speed
 MyCar.miles_per_galon(16, 900)
+
+puts bmw
+puts alfa
