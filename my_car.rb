@@ -1,14 +1,13 @@
 class MyCar
 
   attr_accessor :color, :model, :speed
-  attr_reader :year, :mpg
+  attr_reader :year
 
   def initialize(y, c, m)
     @year = y
     @color = c
     @model = m 
     @speed = 0
-    @@mpg = mpg
   end
 
   def spray_paint(color)
