@@ -6,17 +6,17 @@ class GoodDog3
 
   def initialize(n, a)
     @name = n
-    @age = a * DOG_YEARS
+    @age = a 
   end
 
-  def to_s
-    "This dog's name is #{name} and it is #{age} in dog years."
+  private
+
+  def human_years
+    age * DOG_YEARS
   end
 
 end
 
 sparky = GoodDog3.new('Sparky', 4)
 
-puts sparky
-
-p sparky
+sparky.human_years
