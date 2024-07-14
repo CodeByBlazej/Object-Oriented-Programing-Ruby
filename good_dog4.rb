@@ -1,26 +1,17 @@
 class Animal
-  def speak
-    "Hello!"
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
   end
 end
 
 class GoodDog < Animal
-
-  attr_accessor :name
-
-  def initialize(n)
-    self.name = n
-  end
-
-  def speak
-    super + " from GoodDog class"
+  def initialize(color)
+    super
+    @color = color
   end
 end
 
-class Cat < Animal
-end
 
-sparky = GoodDog.new("Sparky")
-paws = Cat.new
-puts sparky.speak
-puts paws.speak
+bruno = GoodDog.new("bown")
