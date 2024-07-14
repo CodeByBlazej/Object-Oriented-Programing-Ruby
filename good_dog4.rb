@@ -13,7 +13,7 @@ class GoodDog < Animal
   end
 
   def speak
-    "#{self.name} says arf!"
+    super + " from GoodDog class"
   end
 end
 
