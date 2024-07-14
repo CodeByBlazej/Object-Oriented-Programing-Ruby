@@ -9,6 +9,10 @@ class GoodDog3
     @age = a 
   end
 
+  def public_disclosure
+    "#{self.name} in human years is #{human_years}"
+  end
+  
   private
 
   def human_years
@@ -19,4 +23,4 @@ end
 
 sparky = GoodDog3.new('Sparky', 4)
 
-sparky.human_years
+puts sparky.public_disclosure
