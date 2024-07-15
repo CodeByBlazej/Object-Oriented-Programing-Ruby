@@ -1,23 +1,5 @@
-class MyCar
-
-  attr_accessor :color, :model, :speed
-  attr_reader :year
-
-  def initialize(y, c, m)
-    @year = y
-    @color = c
-    @model = m 
-    @speed = 0
-  end
-
-  def spray_paint(color)
-    self.color = color 
-  end
-
-  def car_info
-    "It is #{model} produced in #{year} and it's color is #{color}"
-  end
-
+class Vehicle
+  
   def start
     puts "Engine starting..."
   end
@@ -45,12 +27,35 @@ class MyCar
     @@mpg = miles / gallons 
     puts "Your MPG is #{@@mpg}"
   end
+end
 
+
+class MyCar < Vehicle
+  
+  attr_accessor :color, :model, :speed
+  attr_reader :year
+  
+  def initialize(y, c, m)
+    @year = y
+    @color = c
+    @model = m 
+    @speed = 0
+  end
+  
+  def spray_paint(color)
+    self.color = color 
+  end
+  
+  def car_info
+    "It is #{model} produced in #{year} and it's color is #{color}"
+  end
+  
   def to_s
     "This car is #{model}, it's from #{year}, it's color is #{color} and its mpg is #{@@mpg}"
   end
-
+  
 end
+
 
 bmw = MyCar.new("2010", "red", "e90")
 alfa = MyCar.new("2002", "green", "156")
