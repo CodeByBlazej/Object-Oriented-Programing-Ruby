@@ -53,7 +53,20 @@ class MyCar < Vehicle
   def to_s
     "This car is #{model}, it's from #{year}, it's color is #{color} and its mpg is #{@@mpg}"
   end
-  
+end
+
+class My_truck < Vehicle
+  attr_accessor :brand, :capacity, :seats
+
+  def initialize(b, c, s)
+    @brand = b
+    @capacity = c 
+    @seats = s   
+  end
+
+  def to_s
+    "This is #{brand} truck that has #{capacity} of capacity and can carry #{seats} people"
+  end
 end
 
 
@@ -79,3 +92,8 @@ MyCar.miles_per_galon(16, 900)
 
 puts bmw
 puts alfa
+
+white_van = My_truck.new("Iveco", "1200kg", "3")
+white_van.start
+
+puts white_van
