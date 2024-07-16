@@ -1,4 +1,13 @@
 class Vehicle
+  @@number_of_cars = 0
+
+  def initialize
+    @@number_of_cars += 1
+  end
+
+  def self.total_number_of_cars
+   puts @@number_of_cars
+  end
   
   def start
     puts "Engine starting..."
@@ -42,6 +51,7 @@ class MyCar < Vehicle
     @color = c
     @model = m 
     @speed = 0
+    @@number_of_cars += 1
   end
   
   def spray_paint(color)
@@ -64,6 +74,7 @@ class My_truck < Vehicle
     @brand = b
     @capacity = c 
     @seats = s   
+    @@number_of_cars += 1
   end
 
   def to_s
@@ -71,9 +82,12 @@ class My_truck < Vehicle
   end
 end
 
-
+Vehicle.total_number_of_cars
 bmw = MyCar.new("2010", "red", "e90")
+Vehicle.total_number_of_cars
 alfa = MyCar.new("2002", "green", "156")
+Vehicle.total_number_of_cars
+
 puts bmw.car_info
 bmw.spray_paint("blue")
 puts bmw.car_info
@@ -92,10 +106,12 @@ bmw.stop
 bmw.current_speed
 MyCar.miles_per_galon(16, 900)
 
+
 puts bmw
 puts alfa
 
 white_van = My_truck.new("Iveco", "1200kg", "3")
 white_van.start
+Vehicle.total_number_of_cars
 
 puts white_van
