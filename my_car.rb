@@ -32,7 +32,9 @@ end
 
 class MyCar < Vehicle
   
-  attr_accessor :color, :model, :speed
+  OIL = '5w30'
+
+  attr_accessor :color, :model, :speed, :oil
   attr_reader :year
   
   def initialize(y, c, m)
@@ -47,7 +49,7 @@ class MyCar < Vehicle
   end
   
   def car_info
-    "It is #{model} produced in #{year} and it's color is #{color}"
+    "It is #{model} produced in #{year} and it's color is #{color} and it takes #{OIL} oil"
   end
   
   def to_s
