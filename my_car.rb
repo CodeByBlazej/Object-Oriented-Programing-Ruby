@@ -1,3 +1,9 @@
+module Towable
+  def can_tow?(pounds)
+    pounds < 2000
+  end
+end
+
 class Vehicle
   @@number_of_cars = 0
 
@@ -68,6 +74,8 @@ class MyCar < Vehicle
 end
 
 class My_truck < Vehicle
+  include Towable
+
   attr_accessor :brand, :capacity, :seats
 
   def initialize(b, c, s)
@@ -115,3 +123,4 @@ white_van.start
 Vehicle.total_number_of_cars
 
 puts white_van
+puts white_van.can_tow?(1000)
