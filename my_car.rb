@@ -124,3 +124,7 @@ Vehicle.total_number_of_cars
 
 puts white_van
 puts white_van.can_tow?(1000)
+
+puts MyCar.ancestors
+puts My_truck.ancestors
+puts Vehicle.ancestors
