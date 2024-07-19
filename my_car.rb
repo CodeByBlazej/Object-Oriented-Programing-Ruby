@@ -5,15 +5,33 @@ module Towable
 end
 
 class Vehicle
+
+  attr_accessor :color, :model, :speed, :oil
+  attr_reader :year
   @@number_of_cars = 0
-
-  def initialize
-    @@number_of_cars += 1
-  end
-
+  
   def self.total_number_of_cars
    puts @@number_of_cars
   end
+
+  def self.miles_per_galon(gallons, miles)
+    @@mpg = miles / gallons 
+    puts "Your MPG is #{@@mpg}"
+  end
+  
+  def initialize(y, c, m)
+    @year = y
+    @color = c
+    @model = m 
+    @speed = 0
+    @@number_of_cars += 1
+  end
+  
+
+  # def initialize
+  #   @@number_of_cars += 1
+  # end
+
   
   def start
     puts "Engine starting..."
@@ -38,10 +56,6 @@ class Vehicle
     puts "Your current speed is #{speed}"
   end
 
-  def self.miles_per_galon(gallons, miles)
-    @@mpg = miles / gallons 
-    puts "Your MPG is #{@@mpg}"
-  end
 
   def spray_paint(color)
     self.color = color 
@@ -53,16 +67,16 @@ class MyCar < Vehicle
   
   OIL = '5w30'
 
-  attr_accessor :color, :model, :speed, :oil
-  attr_reader :year
+  # attr_accessor :color, :model, :speed, :oil
+  # attr_reader :year
   
-  def initialize(y, c, m)
-    @year = y
-    @color = c
-    @model = m 
-    @speed = 0
-    @@number_of_cars += 1
-  end
+  # def initialize(y, c, m)
+  #   @year = y
+  #   @color = c
+  #   @model = m 
+  #   @speed = 0
+  #   @@number_of_cars += 1
+  # end
 
   def spray_paint(color)
     super
