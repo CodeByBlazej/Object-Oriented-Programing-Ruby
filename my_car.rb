@@ -42,6 +42,10 @@ class Vehicle
     @@mpg = miles / gallons 
     puts "Your MPG is #{@@mpg}"
   end
+
+  def spray_paint(color)
+    self.color = color 
+  end
 end
 
 
@@ -59,9 +63,9 @@ class MyCar < Vehicle
     @speed = 0
     @@number_of_cars += 1
   end
-  
+
   def spray_paint(color)
-    self.color = color 
+    super
   end
   
   def car_info
@@ -76,17 +80,22 @@ end
 class My_truck < Vehicle
   include Towable
 
-  attr_accessor :brand, :capacity, :seats
+  attr_accessor :brand, :capacity, :seats, :color
 
-  def initialize(b, c, s)
+  def initialize(b, c, s, col)
     @brand = b
     @capacity = c 
     @seats = s   
+    @color = col
     @@number_of_cars += 1
   end
 
+  def spray_paint(color)
+    super
+  end
+
   def to_s
-    "This is #{brand} truck that has #{capacity} of capacity and can carry #{seats} people"
+    "This is #{brand} truck that has #{capacity} of capacity and can carry #{seats} people. It's color is #{color}"
   end
 end
 
@@ -118,7 +127,7 @@ MyCar.miles_per_galon(16, 900)
 puts bmw
 puts alfa
 
-white_van = My_truck.new("Iveco", "1200kg", "3")
+white_van = My_truck.new("Iveco", "1200kg", "3", "white")
 white_van.start
 Vehicle.total_number_of_cars
 
@@ -128,3 +137,6 @@ puts white_van.can_tow?(1000)
 puts MyCar.ancestors
 puts My_truck.ancestors
 puts Vehicle.ancestors
+
+white_van.spray_paint("pink")
+puts white_van
