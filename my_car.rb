@@ -27,12 +27,6 @@ class Vehicle
     @@number_of_cars += 1
   end
   
-
-  # def initialize
-  #   @@number_of_cars += 1
-  # end
-
-  
   def start
     puts "Engine starting..."
   end
@@ -67,16 +61,6 @@ class MyCar < Vehicle
   
   OIL = '5w30'
 
-  # attr_accessor :color, :model, :speed, :oil
-  # attr_reader :year
-  
-  # def initialize(y, c, m)
-  #   @year = y
-  #   @color = c
-  #   @model = m 
-  #   @speed = 0
-  #   @@number_of_cars += 1
-  # end
 
   def spray_paint(color)
     super
