@@ -54,6 +54,16 @@ class Vehicle
   def spray_paint(color)
     self.color = color 
   end
+
+  def public_disclosure
+    "#{self.model} is #{age} years old."
+  end
+
+  private
+
+  def age
+    Time.now.year - year.to_i
+  end
 end
 
 
@@ -138,3 +148,6 @@ puts Vehicle.ancestors
 
 white_van.spray_paint("pink")
 puts white_van
+
+puts bmw.public_disclosure
+puts alfa.public_disclosure
