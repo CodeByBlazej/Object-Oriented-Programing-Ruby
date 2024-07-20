@@ -85,6 +85,23 @@ class MyCar < Vehicle
   end
 end
 
+class Student
+
+  
+  def initialize(n, g)
+    @name = n
+    @grade = g
+  end
+
+  def better_grade_than?(name, grade)
+        
+  end
+  
+  private
+
+  attr_accessor :name, :grade
+end
+
 class My_truck < Vehicle
   include Towable
 
@@ -151,3 +168,8 @@ puts white_van
 
 puts bmw.public_disclosure
 puts alfa.public_disclosure
+
+joe = Student.new("joe", "c")
+bob = Student.new("bob", "d")
+
+joe.better_grade_than?(bob)
