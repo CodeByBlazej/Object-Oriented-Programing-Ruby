@@ -93,11 +93,11 @@ class Student
     @grade = g
   end
 
-  def better_grade_than?(name, grade)
-        
+  def better_grade_than?(other_student)
+    grade > other_student.grade
   end
   
-  private
+  protected
 
   attr_accessor :name, :grade
 end
@@ -169,7 +169,7 @@ puts white_van
 puts bmw.public_disclosure
 puts alfa.public_disclosure
 
-joe = Student.new("joe", "c")
-bob = Student.new("bob", "d")
+joe = Student.new("Joe", 43)
+bob = Student.new("Bob", 20)
+puts "Well done!" if joe.better_grade_than?(bob)
 
-joe.better_grade_than?(bob)
