@@ -1,9 +1,5 @@
-class Dog
-  def speak()
-    return("ruff ruff")
+class Penguins
+  def looks()
+    returns("We are cute!")
   end
 end
-
-spot = Dog.new()
-
-puts spot.speak()
