@@ -1,13 +1,9 @@
-class Celsius
-  def initialize(temperature)
-    @temperature = temperature
+class Insect
+  def initialize(age_in_days)
+    @age_in_days = age_in_days
   end
 
-  def to_fahrenheit()
-    @temperature * 1.8 + 32
+  def age_in_years()
+    return(@age_in_days.to_f / 365)
   end
 end
-
-celsius = Celsius.new(10)
-
-puts celsius.to_fahrenheit
