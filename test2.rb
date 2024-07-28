@@ -1,12 +1,11 @@
-module MathHelper
-  def multiply_by_two(number)
-    number * 2
+class Mammal
+  def heartbeat?
+    true
   end
 end
 
-class Homework
-  include MathHelper
+class Dog < Mammal
 end
 
-to_do = Homework.new()
-puts to_do.multiply_by_two(2)
+d = Dog.new()
+puts d.heartbeat?
