@@ -1,9 +1,5 @@
-class Insect
-  def initialize(age_in_days)
-    @age_in_days = age_in_days
-  end
-
-  def age_in_years()
-    return(@age_in_days.to_f / 365)
+class Lamp
+  def self.about_me()
+    return "We brighten up people's lives"
   end
 end
