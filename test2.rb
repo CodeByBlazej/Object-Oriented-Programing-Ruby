@@ -1,13 +1,19 @@
-class WaterBottle
-  def initialize(size)
-    @size = size
+class Person
+
+  def initialize(age)
+    @age = age
+  end
+  
+  def age=(new_age)
+    @age = new_age
   end
 
-  def what_size?()
-    return("this bottle is #{@size}ml")
+  def age()
+    return(@age)
   end
 end
 
-
-bottle = WaterBottle.new(100)
-puts bottle.what_size?()
+p = Person.new(24)
+puts p.age
+puts p.age=(42)
+puts p.age
