@@ -1,21 +1,23 @@
-class BaseballPlayer
-  def initialize(hits, walks, at_bats)
-    @hits = hits
-    @walks = walks
-    @at_bats = at_bats
+class Person
+  def initialize(first_name, last_name)
+    @first_name = first_name
+    @last_name = last_name
   end
 
-  def battling_average()
-    return(@hits.to_f / @at_bats)
+  def first_name()
+    return(@first_name)
   end
 
-  def on_base_percentage()
-    return((@hits + @walks).to_f / @at_bats)
+  def last_name()
+    return(@last_name)
+  end
+
+  def full_name()
+    return("#{@first_name} #{@last_name}")
   end
 end
 
-player = BaseballPlayer.new(330, 110, 1125)
-
-puts player.battling_average
-puts player.on_base_percentage
-
+p = Person.new("Blazej", "Magiera")
+puts p.first_name
+puts p.last_name
+puts p.full_name
