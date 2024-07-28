@@ -1,19 +1,12 @@
-class Person
-
-  def initialize(age)
-    @age = age
-  end
-  
-  def age=(new_age)
-    @age = new_age
-  end
-
-  def age()
-    return(@age)
+module MathHelper
+  def multiply_by_two(number)
+    number * 2
   end
 end
 
-p = Person.new(24)
-puts p.age
-puts p.age=(42)
-puts p.age
+class Homework
+  include MathHelper
+end
+
+to_do = Homework.new()
+puts to_do.multiply_by_two(2)
