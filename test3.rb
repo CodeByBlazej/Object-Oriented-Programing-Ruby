@@ -1,18 +1,20 @@
-class Person
-  def initialize name="unknown", age=0
-    @name = name
-    @age = age
+class Circle
+  
+  @@PI = 3.141592
+
+  def initialize
+    @radius = 0
   end
 
-  def to_s
-    "Name: #{@name}, Age: #{@age}"
+  def set_radius radius
+    @radius = radius
+  end
+
+  def area
+    @radius * @radius * @@PI
   end
 end
 
-p1 = Person.new
-p2 = Person.new "unknown", 17
-p3 = Person.new "Becky", 19
-p4 = Person.new "Robert"
-
-puts p1, p2, p3, p4
-
+c = Circle.new
+c.set_radius 5
+puts c.area
