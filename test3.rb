@@ -1,15 +1,34 @@
-class Being
+class Base
   def initialize
-    puts "Being class created"
+    @name = "Base"
+  end
+
+  private
+
+  def private_method
+    puts "private method called"
+  end
+
+  protected
+
+  def protected_method
+    puts "protected method called"
+  end
+
+  public
+
+  def get_name
+    return @name
   end
 end
 
-class Human < Being
-  def initialize
-    super
-    puts "Human class created"
+class Derived < Base
+  def public_method
+    private_method
+    protected_method
   end
 end
 
-Being.new
-Human.new
+d = Derived.new
+d.public_method
+puts d.get_name
