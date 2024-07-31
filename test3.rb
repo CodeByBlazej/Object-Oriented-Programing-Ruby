@@ -1,20 +1,23 @@
-class Circle
-  
-  @@PI = 3.141592
+class Some
 
-  def initialize
-    @radius = 0
+  def method1
+    puts "public method1 called"
   end
 
-  def set_radius radius
-    @radius = radius
+  public
+
+  def method2
+    puts "public method2 called"
   end
 
-  def area
-    @radius * @radius * @@PI
+  def method3
+    puts "public method3 called"
+    method1
+    self.method1
   end
 end
 
-c = Circle.new
-c.set_radius 5
-puts c.area
+s = Some.new
+s.method1
+s.method2
+s.method3
