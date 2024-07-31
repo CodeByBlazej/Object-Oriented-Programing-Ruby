@@ -1,15 +1,15 @@
-class Some
-
+class Being
   def initialize
-    method1
-  end
-
-  private
-
-  def method1
-    puts "private method1 called"
+    puts "Being class created"
   end
 end
 
-s = Some.new
-s.method1
+class Human < Being
+  def initialize
+    super
+    puts "Human class created"
+  end
+end
+
+Being.new
+Human.new
