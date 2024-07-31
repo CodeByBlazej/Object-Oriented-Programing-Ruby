@@ -1,23 +1,15 @@
 class Some
 
-  def method1
-    puts "public method1 called"
-  end
-
-  public
-
-  def method2
-    puts "public method2 called"
-  end
-
-  def method3
-    puts "public method3 called"
+  def initialize
     method1
-    self.method1
+  end
+
+  private
+
+  def method1
+    puts "private method1 called"
   end
 end
 
 s = Some.new
 s.method1
-s.method2
-s.method3
