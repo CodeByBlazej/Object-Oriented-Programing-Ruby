@@ -1,21 +1,17 @@
 class Circle
-  attr_accessor :radius
-
-  def initialize r
-    @radius = r
+  def initialize x
+    @r = x
   end
 
-  def +(other)
-    Circle.new @radius + other.radius
+  def self.info
+    "This is a Circle class"
   end
 
-  def to_s
-    "Circle with radius: #{@radius}"
+  def area
+    @r * @r * 3.141592
   end
 end
 
-c1 = Circle.new 5
-c2 = Circle.new 6
-c3 = c1 + c2
-
-puts c3
+p Circle.info
+c = Circle.new 3
+p c.area
