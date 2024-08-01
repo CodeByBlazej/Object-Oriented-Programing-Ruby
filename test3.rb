@@ -1,17 +1,26 @@
-class Circle
-  def initialize x
-    @r = x
+class Animal
+  def make_noise
+    "Some noise"
   end
 
-  def self.info
-    "This is a Circle class"
-  end
-
-  def area
-    @r * @r * 3.141592
+  def sleep
+    puts "#{self.class.name} is sleeping"
   end
 end
 
-p Circle.info
-c = Circle.new 3
-p c.area
+class Dog < Animal
+  def make_noise
+    "Woof!"
+  end
+end
+
+class Cat < Animal
+  def make_noise
+    "Meow!"
+  end
+end
+
+[Animal.new, Dog.new, Cat.new].each do |animal|
+  puts animal.make_noise
+  animal.sleep
+end
