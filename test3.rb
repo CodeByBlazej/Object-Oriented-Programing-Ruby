@@ -1,26 +1,19 @@
-class Animal
-  def make_noise
-    "Some noise"
-  end
-
-  def sleep
-    puts "#{self.class.name} is sleeping"
-  end
+module Forest
+  class Rock ; end
+  class Tree ; end
+  class Animal ; end
 end
 
-class Dog < Animal
-  def make_noise
-    "Woof!"
-  end
+module Town
+  class Pool ; end
+  class Cinema ; end
+  class Square ; end
+  class Animal ; end
 end
 
-class Cat < Animal
-  def make_noise
-    "Meow!"
-  end
-end
+p Forest::Tree.new
+p Forest::Rock.new
+p Town::Cinema.new
 
-[Animal.new, Dog.new, Cat.new].each do |animal|
-  puts animal.make_noise
-  animal.sleep
-end
+p Forest::Animal.new
+p Town::Animal.new
