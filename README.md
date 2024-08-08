@@ -1,3 +1,3 @@
 # Object-Oriented-Programing-Ruby
 
-Exercises from OOP
+Exercises from OOP Odin
